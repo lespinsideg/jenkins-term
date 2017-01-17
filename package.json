@@ -13,6 +13,7 @@
   "author": "kyuhyen hwang",
   "license": "apache 2.0",
   "dependencies": {
+    "blessed": "^0.1.81",
     "blessed-contrib": "^4.7.5",
     "jenkins": "^0.20.0",
     "rxjs": "^5.0.3"
