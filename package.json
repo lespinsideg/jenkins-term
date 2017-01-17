@@ -1,0 +1,20 @@
+{
+  "name": "jenkins-term",
+  "version": "1.0.0",
+  "description": "jenkins terminal application",
+  "main": "jenkins-term.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "jenkins",
+    "terminal"
+  ],
+  "author": "kyuhyen hwang",
+  "license": "apache 2.0",
+  "dependencies": {
+    "blessed-contrib": "^4.7.5",
+    "jenkins": "^0.20.0",
+    "rxjs": "^5.0.3"
+  }
+}
