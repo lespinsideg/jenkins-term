@@ -2,6 +2,7 @@ const jenkins = require('jenkins')({ baseUrl: 'http://admin:1q2w3e4r5t@localhost
 const Rx = require('rxjs');
 const blessed = require('blessed');
 const contrib = require('blessed-contrib');
+const Duration = require('js-joda').Duration;
 
 const screen = blessed.screen();
 var grid = new contrib.grid({
@@ -51,13 +52,9 @@ const getBuildDuration = function(build) {
     return 'N/A';
   }
 
-  const duration = build.duration;
+  var isoDuration = Duration.ofMillis(build.duration).withNanos(0).toString();
 
-  if(duration > 100) {
-    return duration / 1000 + ' sec';
-  }
-
-  return duration + ' ms';
+  return isoDuration.replace('PT','').replace('H', ' hr ').replace('M', ' min ').replace('S', ' sec ');
 }
 
 const jobsObservable = Rx.Observable.fromPromise(jenkins.job.list())
